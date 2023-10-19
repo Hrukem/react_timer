@@ -14,6 +14,11 @@ export default class App extends React.Component {
   state = {
     count: 0,
     isCounting: false,
+    posts: [
+      { id: `abc1`, name: `JS Basic` },
+      { id: `abc2`, name: `JS Advanced` },
+      { id: `abc3`, name: `React JS` },
+    ],
   };
 
   increment = () => {
@@ -61,6 +66,10 @@ export default class App extends React.Component {
           <button onClick={this.handleStart}>Start</button>
         )}
         <button onClick={this.handleReset}>Reset</button>
+
+        {this.state.posts.map((post) => (
+          <h2 key={post.id}>{post.name}</h2>
+        ))}
       </div>
     );
   }
