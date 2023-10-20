@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 // import './App.css';
 import React from "react";
-// import { Posts } from "./components/Posts";
+import { Posts } from "./components/Posts";
 
 /* function App() {
   return (
@@ -21,6 +21,10 @@ export default class App extends React.Component {
       { id: `abc3`, name: `React JS` },
     ],
   };
+
+  handleSomething = () => {
+    console.log('setState undate');
+  }
 
   increment = () => {
     this.setState({ count: this.state.count + 1 });
@@ -57,6 +61,8 @@ export default class App extends React.Component {
   }
 
   render() {
+    const {posts} = this.state;
+
     return (
       <div className="App">
         <h1>React Timer</h1>
@@ -68,7 +74,7 @@ export default class App extends React.Component {
         )}
         <button onClick={this.handleReset}>Reset</button>
 
-        <Posts posts={this.state.posts} />
+        <Posts posts={posts} cb={this.handleSomething}/>
       </div>
     );
   }

@@ -1,3 +1,4 @@
 export function Post (props) {
-    return <h2>{props.name}</h2>
+    const {name, cb} = props;
+    return <h2 onClick={cb}>{name}</h2>
 }
