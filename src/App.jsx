@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 // import './App.css';
 import React from "react";
+// import { Posts } from "./components/Posts";
 
 /* function App() {
   return (
@@ -67,9 +68,7 @@ export default class App extends React.Component {
         )}
         <button onClick={this.handleReset}>Reset</button>
 
-        {this.state.posts.map((post) => (
-          <h2 key={post.id}>{post.name}</h2>
-        ))}
+        <Posts posts={this.state.posts} />
       </div>
     );
   }
