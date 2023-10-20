@@ -23,7 +23,13 @@ export default class App extends React.Component {
   };
 
   handleSomething = () => {
-    console.log('setState undate');
+    console.log('create somthing')
+  }
+
+  removePost = (id) => {
+    const {posts} = this.state
+
+    this.setState({posts: posts.filter(post => post.id !== id)})
   }
 
   increment = () => {
@@ -74,7 +80,7 @@ export default class App extends React.Component {
         )}
         <button onClick={this.handleReset}>Reset</button>
 
-        <Posts posts={posts} cb={this.handleSomething}/>
+        <Posts posts={posts} cb={this.handleSomething} cb1={this.removePost}/>
       </div>
     );
   }
